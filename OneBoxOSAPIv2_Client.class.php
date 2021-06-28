@@ -41,7 +41,9 @@ class OneBoxOSAPIv2_Client {
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headerArray);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_ENCODING, '');
-        curl_setopt($ch, CURLOPT_TCP_FASTOPEN, 1);
+        if (defined('CURLOPT_TCP_FASTOPEN')) {
+            curl_setopt($ch, CURLOPT_TCP_FASTOPEN, 1);
+        }
         //curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
 
         // verbose log
