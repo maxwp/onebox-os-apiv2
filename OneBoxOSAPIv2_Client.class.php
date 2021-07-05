@@ -112,7 +112,7 @@ class OneBoxOSAPIv2_Client {
         $paramArray = [];
         $paramArray['login'] = $this->_login;
         $paramArray['restapipassword'] = $this->_restAPIPassword;
-        $a = $this->_request('POST', 'api/v2/get/token/', $paramArray);
+        $a = $this->_request('POST', 'api/v2/token/get/', $paramArray);
         $this->_token = $a['token'];
         return $this->_token;
     }
